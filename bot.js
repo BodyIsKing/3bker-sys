@@ -1843,7 +1843,7 @@ if (!points[message.author.id]) points[message.author.id] = {
         let r = (new Date).getTime() - spee[id];
         r = 15*1000 - r;
     }
-    if ( message.content == prefix+'speed'){
+    if ( message.content == prefix + 'speed'){
        
         try{
 }catch(e){
@@ -2056,7 +2056,7 @@ if (!points[message.author.id]) points[message.author.id] = {
         r = 15*1000 - r;
     return;
     }
-    if ( message.content == prefix+'quas'){
+    if ( message.content == prefix + 'quas'){
        
         try{
 }catch(e){
