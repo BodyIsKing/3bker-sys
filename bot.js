@@ -1043,11 +1043,11 @@ let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
 let request = `Requested By ${message.author.username}`;
 message.channel.send(`**Are You sure you want to clear the chat?**`).then(msg => {
 msg.react('?')
-.then(() => msg.react('?'))
-.then(() =>msg.react('?'))
+.then(() => msg.react(':white_check_mark:'))
+.then(() =>msg.react(':negative_squared_cross_mark:'))
 
-let reaction1Filter = (reaction, user) => reaction.emoji.name === '?' && user.id === message.author.id;
-let reaction2Filter = (reaction, user) => reaction.emoji.name === '?' && user.id === message.author.id;
+let reaction1Filter = (reaction, user) => reaction.emoji.name === ':white_check_mark:' && user.id === message.author.id;
+let reaction2Filter = (reaction, user) => reaction.emoji.name === ':negative_squared_cross_mark:' && user.id === message.author.id;
 
 let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });
 let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
