@@ -1420,7 +1420,7 @@ message.channel.sendEmbed(sh);
 }
 })
 client.on('message', message => {
-if (message.content.startsWith(prefix + 'mypoints')) {
+if (message.content.startsWith(prefix + 'points')) {
 	if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
 	let userData = points[message.author.id];
 	let embed = new Discord.RichEmbed()
