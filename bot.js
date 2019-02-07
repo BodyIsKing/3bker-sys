@@ -109,8 +109,8 @@ ${prefix}hchannel / اخفاء الشات
 ${prefix}schannel / اضهار الشات المخفية
 ${prefix}clr <numbr> / مسح الشات بعدد
 ${prefix}clear / مسح الشات
-${prefix}اسكت @user <time> / اعطاء العضو ميوت 
-${prefix}تكلم @user / لفك الميوت عن الشخص 
+${prefix}mute @user <time> / اعطاء العضو ميوت 
+${prefix}unmute @user / لفك الميوت عن الشخص 
 ${prefix}kick @user <reason> / طرد الشخص من السيرفر
 ${prefix}ban @user <reason> / حضر الشخص من السيرفر
 ${prefix}mutechannel / تقفيل الشات
@@ -1083,7 +1083,7 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return mess
 var command = message.content.split(" ")[0];
 command = command.slice(prefix.length);
 var args = message.content.split(" ").slice(1);
-    if(command == "اسكت") {
+    if(command == "mute") {
     let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!tomute) return message.reply("**يجب عليك المنشن اولاّ**:x: ") .then(m => m.delete(5000));
     if(tomute.hasPermission("MANAGE_MESSAGES"))return      message.channel.send('**للأسف لا أمتلك صلاحية** `MANAGE_MASSAGEES`');
@@ -1120,7 +1120,7 @@ var args = message.content.split(" ").slice(1);
   
 
   }
-if(command === `تكلم`) {
+if(command === `unmute`) {
   if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.sendMessage("**ليس لديك صلاحية لفك عن الشخص ميوت**:x: ").then(m => m.delete(5000));
 if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply("**I Don't Have `MANAGE_ROLES` Permission**").then(msg => msg.delete(6000))
 
