@@ -96,7 +96,7 @@ ${prefix}contact/ارسال اقتراح او لمراسلة صاحب البوت
 ,`
         ***__Administrative Orders__***
 **
-${prefix}اسحب @user /  لسحب الشخص الى روومك
+${prefix}move @user /  لسحب الشخص الى روومك
 ${prefix}bc / رسالة جماعية الى كل اعضاء السيرفر
 ${prefix}bk / رسالة جماعيه مع
 ${prefix}rolebc <everyone or @role> / راسال رساله جماعيه لرتبه محدده
@@ -754,7 +754,7 @@ message.channel.send(embed);
 });
 client.on('message', message => {
 if(!message.channel.guild) return;
-if(message.content.startsWith(prefix + 'اسحب')) {
+if(message.content.startsWith(prefix + 'move')) {
  if (message.member.hasPermission("MOVE_MEMBERS")) {
  if (message.mentions.users.size === 0) {
  return message.channel.send("``لاستخدام الأمر اكتب هذه الأمر : " +prefix+ "اسحب [USER]``")
